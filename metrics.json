@@ -1,0 +1,136 @@
+{
+  "scenarios": 7,
+  "expectations_met": 7,
+  "total_cost_units": 56.0,
+  "cost_if_everything_called": 98.0,
+  "saved_pct": 42.9,
+  "camara_apis": [
+    "number-verification",
+    "sim-swap",
+    "device-swap",
+    "device-status",
+    "location-verification"
+  ],
+  "tools": [
+    "verify_number",
+    "check_sim_swap",
+    "sim_swap_date",
+    "check_device_swap",
+    "check_roaming",
+    "verify_location",
+    "check_reachability"
+  ],
+  "min_calls": 1,
+  "max_calls": 7,
+  "avg_calls": 4.3,
+  "levels_seen": [
+    "refuse",
+    "sign",
+    "sign_with_record",
+    "step_up"
+  ],
+  "per_scenario": [
+    {
+      "id": "light-address-change",
+      "title": "Change of address on file",
+      "level": "sign",
+      "expected": "sign",
+      "met": true,
+      "calls": 1,
+      "spend": 1.0,
+      "apis": [
+        "number-verification"
+      ]
+    },
+    {
+      "id": "medium-company-registration",
+      "title": "Register a company from abroad",
+      "level": "sign_with_record",
+      "expected": "sign_with_record",
+      "met": true,
+      "calls": 3,
+      "spend": 7.0,
+      "apis": [
+        "number-verification",
+        "sim-swap",
+        "device-swap"
+      ]
+    },
+    {
+      "id": "heavy-property-sale",
+      "title": "Sell an inherited flat",
+      "level": "sign_with_record",
+      "expected": "sign_with_record",
+      "met": true,
+      "calls": 6,
+      "spend": 11.0,
+      "apis": [
+        "number-verification",
+        "sim-swap",
+        "device-swap",
+        "device-status",
+        "location-verification"
+      ]
+    },
+    {
+      "id": "heavy-sim-two-days",
+      "title": "Property sale, SIM changed two days ago",
+      "level": "refuse",
+      "expected": "refuse",
+      "met": true,
+      "calls": 7,
+      "spend": 14.0,
+      "apis": [
+        "number-verification",
+        "sim-swap",
+        "device-swap",
+        "device-status",
+        "location-verification"
+      ]
+    },
+    {
+      "id": "country-mismatch",
+      "title": "Declared Turkey, line is in Germany",
+      "level": "step_up",
+      "expected": "step_up",
+      "met": true,
+      "calls": 6,
+      "spend": 11.0,
+      "apis": [
+        "number-verification",
+        "sim-swap",
+        "device-swap",
+        "device-status",
+        "location-verification"
+      ]
+    },
+    {
+      "id": "heavy-new-handset",
+      "title": "Property-grade act from a new phone",
+      "level": "step_up",
+      "expected": "step_up",
+      "met": true,
+      "calls": 6,
+      "spend": 11.0,
+      "apis": [
+        "number-verification",
+        "sim-swap",
+        "device-swap",
+        "device-status",
+        "location-verification"
+      ]
+    },
+    {
+      "id": "unverified-line",
+      "title": "The network will not confirm the line",
+      "level": "refuse",
+      "expected": "refuse",
+      "met": true,
+      "calls": 1,
+      "spend": 1.0,
+      "apis": [
+        "number-verification"
+      ]
+    }
+  ]
+}
